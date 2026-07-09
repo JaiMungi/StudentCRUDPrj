@@ -6,6 +6,6 @@ RUN mvn clean package -DskipTests
 
 FROM tomcat:10.1-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
-COPY --from=build /app/target/MyDepolyment.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=build /app/target/StudentCRUD.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
