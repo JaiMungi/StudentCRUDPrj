@@ -11,9 +11,10 @@ public class DBUtil {
 //    private static final String URL =
 //            "jdbc:mysql://localhost:3306/studentdb";
     private static final String URL =
-            "String url=\"jdbc:mysql://HOST:3306/studentdb\";";
+            "\n"
+            + "mysql://root:ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz@mysql.railway.internal:3306/railway";
     private static final String USER = "root";
-    private static final String PASSWORD = "root"; // <-- change to your MySQL password
+    private static final String PASSWORD = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz"; // <-- change to your MySQL password
 
     static {
         try {
