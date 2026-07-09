@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registration Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+	<nav class="navbar">
+		<a class="brand" href="index.html">🎓 Student Portal</a>
+		<div class="nav-links">
+			<a href="registration.html">Register</a> <a href="viewstudents">View
+				Students</a>
+		</div>
+	</nav>
+
+	<div class="page-wrap center-v">
+		<div class="card">
+			<div class="card-header">
+				<h1>📝 Registration Form</h1>
+				<p>Fill in the details below to add a new student</p>
+			</div>
+			<div class="card-body">
+				<form action="register" method="post">
+
+					<div class="form-group">
+						<label for="name">Name</label> <input type="text" id="name"
+							name="name" placeholder="Enter full name" required>
+					</div>
+
+					<div class="form-group">
+						<label for="branch">Branch</label> <select id="branch"
+							name="branch">
+							<option value="CSE">CSE</option>
+							<option value="IT">IT</option>
+							<option value="ECE">ECE</option>
+							<option value="EE">EE</option>
+							<option value="ME">ME</option>
+							<option value="CE">CE</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="semester">Semester</label> <select id="semester"
+							name="semester">
+							<option value="I">I</option>
+							<option value="II">II</option>
+							<option value="III">III</option>
+							<option value="IV">IV</option>
+							<option value="V">V</option>
+							<option value="VI">VI</option>
+							<option value="VII">VII</option>
+							<option value="VIII">VIII</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Gender</label>
+						<div class="choice-row">
+							<label><input type="radio" name="gender" value="Male"
+								checked> Male</label> <label><input type="radio"
+								name="gender" value="Female"> Female</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>Hobby</label>
+						<div class="choice-row">
+							<label><input type="checkbox" name="hobby"
+								value="Reading"> Reading</label> <label><input
+								type="checkbox" name="hobby" value="Playing"> Playing</label> <label><input
+								type="checkbox" name="hobby" value="Dancing"> Dancing</label>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-block">SUBMIT</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
