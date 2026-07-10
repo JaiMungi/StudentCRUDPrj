@@ -28,7 +28,11 @@ public class DBUtil {
 
 	        String url = "jdbc:mysql://" + host + ":" + port + "/" + database
 	                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-
+	        
+	        System.out.println("===== NEW DBUTIL =====");
+	        System.out.println(url);
+	        System.out.println(user);
+	        
 	        return DriverManager.getConnection(url, user, password);
 
 	    } catch (Exception e) {
