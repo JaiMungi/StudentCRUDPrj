@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
-	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+	
 //    private static final String URL =
 //            "jdbc:mysql://localhost:3306/studentdb";
 	
@@ -21,8 +21,9 @@ public class DBUtil {
 		String database = System.getenv("MYSQLDATABASE");
 		String user = System.getenv("MYSQLUSER");
 		String password = System.getenv("MYSQLPASSWORD");
-		String url = "jdbc:mysql://" + host + ":" + port + "/" + database
-		           + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+//		String url = "jdbc:mysql://" + host + ":" + port + "/" + database
+//		           + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+		String url = "jdbc:mysql://mysql.railway.internal:3306/railway";
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
