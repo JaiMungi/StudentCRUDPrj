@@ -10,7 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-@WebServlet("https://studentcrudprj-production.up.railway.app/register")
+@WebServlet("/register")
 public class RegisterServlet extends jakarta.servlet.http.HttpServlet {
 
     private static final long serialVersionUID = 1L;

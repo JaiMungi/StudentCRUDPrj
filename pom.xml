@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.exam</groupId>
-	<artifactId>MyServletExampleSectA</artifactId>
+	<artifactId>StudentCRUD</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
@@ -24,7 +24,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>MyServletExampleSectA</finalName>
+		<finalName>StudentCRUD</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

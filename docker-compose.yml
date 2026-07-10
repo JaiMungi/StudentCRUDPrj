@@ -8,9 +8,9 @@ services:
 
     environment:
 
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz
 
-      MYSQL_DATABASE: studentdb
+      MYSQL_DATABASE: railway
 
     ports:
 
