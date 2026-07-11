@@ -12,7 +12,7 @@ public class DBUtil {
 
 		    private static final String USER = "root";
 
-		    private static final String PASSWORD = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz\n";   // Railway password
+		    private static final String PASSWORD = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz";   // Railway password
 
 		    public static Connection getConnection() {
 
