@@ -64,44 +64,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* ---------- Hamburger toggle (hidden on desktop) ---------- */
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.12);
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.nav-toggle span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    border-radius: 2px;
-    background: #fff;
-    transition: transform 0.25s ease, opacity 0.2s ease;
-}
-
-.nav-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
 /* ---------- Page wrapper / centering ---------- */
 .page-wrap {
     display: flex;
@@ -513,42 +475,27 @@ table.data-table {
     /* Navbar */
 
     .navbar{
-        flex-wrap: wrap;
-        padding:14px 18px;
-        position: relative;
+        flex-direction:column;
+        gap:15px;
+        padding:18px;
+        text-align:center;
     }
 
     .navbar .brand{
-        font-size:20px;
-    }
-
-    .nav-toggle{
-        display:flex;
+        font-size:22px;
     }
 
     .navbar .nav-links{
-        order: 3;
-        flex-basis: 100%;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
         display:flex;
-        flex-direction:column;
-        gap:8px;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
         width:100%;
-        margin-top: 0;
-        transition: max-height 0.28s ease, opacity 0.22s ease, margin-top 0.28s ease;
-    }
-
-    .navbar .nav-links.open{
-        max-height: 300px;
-        opacity: 1;
-        margin-top: 16px;
     }
 
     .navbar .nav-links a{
         margin-left:0;
-        width:100%;
+        flex:1 1 140px;
         text-align:center;
     }
 
@@ -646,76 +593,12 @@ table.data-table {
         max-width:100%;
     }
 
-    /* Table -> stacked cards on mobile */
-
     .card.wide{
-        overflow-x: visible;
+        overflow-x:auto;
     }
 
     table.data-table{
-        min-width: 0;
-        border-collapse: separate;
-        border-spacing: 0 12px;
-    }
-
-    .data-table thead{
-        display: none;
-    }
-
-    .data-table tbody tr{
-        display: block;
-        background: #fbfbff;
-        border: 1px solid #eceefa;
-        border-radius: 12px;
-        padding: 6px 4px;
-        box-shadow: 0 4px 14px rgba(37, 25, 90, 0.06);
-    }
-
-    .data-table tbody tr:hover{
-        background: #fbfbff;
-    }
-
-    .data-table tbody td{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 10px 14px;
-        border-bottom: 1px solid #f0f1f8;
-        text-align: right;
-    }
-
-    .data-table tbody td:last-child{
-        border-bottom: none;
-    }
-
-    .data-table tbody td::before{
-        content: attr(data-label);
-        font-size: 11px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
-        color: var(--text-muted);
-        text-align: left;
-        margin-right: auto;
-    }
-
-    .data-table tbody td.name-cell{
-        justify-content: flex-start;
-        text-align: left;
-    }
-
-    .data-table tbody td.name-cell::before{
-        display: none;
-    }
-
-    .data-table tbody td.row-actions{
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .data-table tbody td.row-actions::before{
-        display: none;
+        min-width:700px;
     }
 
 }
