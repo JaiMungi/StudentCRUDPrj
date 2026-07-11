@@ -7,38 +7,29 @@ import java.sql.SQLException;
 public class DBUtil {
 
 	
-//    private static final String URL =
-//            "jdbc:mysql://localhost:3306/studentdb";
-	
-//	private static final String USER = "root";
-//	private static final String PASSWORD = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz"; // <-- change to your MySQL password
-	
-	static Connection con;
-	public static Connection getConnection()
-	{
-		try {
+ private static final String URL =
+		        "jdbc:mysql://ballast.proxy.rlwy.net:24024/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
-	        Class.forName("com.mysql.cj.jdbc.Driver");
+		    private static final String USER = "root";
 
-	        String host = System.getenv("MYSQLHOST");
-	        String port = System.getenv("MYSQLPORT");
-	        String database = System.getenv("MYSQLDATABASE");
-	       // String user = System.getenv("MYSQLUSER");
-	        String user = "root";
-	        //String password = System.getenv("MYSQLPASSWORD");
-	        String password = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz";
-//	        String url = "jdbc:mysql://" + host + ":" + port + "/" + database
-//	                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-	        String url = "mysql://root:ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz@ballast.proxy.rlwy.net:24024/railway";
-	        System.out.println("===== NEW DBUTIL =====");
-	        System.out.println(url);
-	        System.out.println(user);
-	        
-	        return DriverManager.getConnection(url, user, password);
+		    private static final String PASSWORD = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz\n";   // Railway password
 
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return null;
-	    }
-	}
+		    public static Connection getConnection() {
+
+		        Connection con = null;
+
+		        try {
+
+		            Class.forName("com.mysql.cj.jdbc.Driver");
+
+		            con = DriverManager.getConnection(URL, USER, PASSWORD);
+
+		            System.out.println("Database Connected Successfully");
+
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
+
+		        return con;
+		    }
 }
