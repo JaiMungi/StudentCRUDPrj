@@ -64,6 +64,44 @@ body {
     transform: translateY(-1px);
 }
 
+/* ---------- Hamburger toggle (hidden on desktop) ---------- */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ---------- Page wrapper / centering ---------- */
 .page-wrap {
     display: flex;
@@ -430,4 +468,298 @@ table.data-table {
 @media (max-width: 560px) {
     .card-body, .card-header { padding-left: 20px; padding-right: 20px; }
     .table-toolbar { flex-direction: column; align-items: stretch; }
+}
+/* ========================================================
+   RESPONSIVE DESIGN
+======================================================== */
+
+/* ---------- Tablets ---------- */
+@media screen and (max-width:992px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .hero{
+        margin:50px auto 30px;
+        padding:0 20px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero-card-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:18px;
+        padding:0 20px 40px;
+    }
+
+    .mini-card{
+        width:100%;
+    }
+
+    .card.wide{
+        max-width:100%;
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+@media screen and (max-width:768px){
+
+    /* Navbar */
+
+    .navbar{
+        flex-wrap: wrap;
+        padding:14px 18px;
+        position: relative;
+    }
+
+    .navbar .brand{
+        font-size:20px;
+    }
+
+    .nav-toggle{
+        display:flex;
+    }
+
+    .navbar .nav-links{
+        order: 3;
+        flex-basis: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+        width:100%;
+        margin-top: 0;
+        transition: max-height 0.28s ease, opacity 0.22s ease, margin-top 0.28s ease;
+    }
+
+    .navbar .nav-links.open{
+        max-height: 300px;
+        opacity: 1;
+        margin-top: 16px;
+    }
+
+    .navbar .nav-links a{
+        margin-left:0;
+        width:100%;
+        text-align:center;
+    }
+
+    /* Hero */
+
+    .hero{
+        margin:40px auto;
+        padding:0 15px;
+    }
+
+    .hero h1{
+        font-size:26px;
+        line-height:1.3;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+        max-width:320px;
+    }
+
+    /* Cards */
+
+    .hero-card-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:18px;
+        padding:0 15px 40px;
+    }
+
+    .mini-card{
+        width:100%;
+    }
+
+    /* Registration Card */
+
+    .page-wrap{
+        padding:20px 12px 40px;
+    }
+
+    .page-wrap.center-v{
+        align-items:flex-start;
+        min-height:auto;
+    }
+
+    .card{
+        max-width:100%;
+    }
+
+    .card-header,
+    .card-body{
+        padding:20px;
+    }
+
+    /* Form */
+
+    .choice-row{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .choice-row label{
+        width:100%;
+        justify-content:flex-start;
+    }
+
+    .actions-row{
+        flex-direction:column;
+    }
+
+    .actions-row .btn{
+        width:100%;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    /* Table */
+
+    .table-toolbar{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search-box{
+        max-width:100%;
+    }
+
+    /* Table -> stacked cards on mobile */
+
+    .card.wide{
+        overflow-x: visible;
+    }
+
+    table.data-table{
+        min-width: 0;
+        border-collapse: separate;
+        border-spacing: 0 12px;
+    }
+
+    .data-table thead{
+        display: none;
+    }
+
+    .data-table tbody tr{
+        display: block;
+        background: #fbfbff;
+        border: 1px solid #eceefa;
+        border-radius: 12px;
+        padding: 6px 4px;
+        box-shadow: 0 4px 14px rgba(37, 25, 90, 0.06);
+    }
+
+    .data-table tbody tr:hover{
+        background: #fbfbff;
+    }
+
+    .data-table tbody td{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 14px;
+        border-bottom: 1px solid #f0f1f8;
+        text-align: right;
+    }
+
+    .data-table tbody td:last-child{
+        border-bottom: none;
+    }
+
+    .data-table tbody td::before{
+        content: attr(data-label);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        color: var(--text-muted);
+        text-align: left;
+        margin-right: auto;
+    }
+
+    .data-table tbody td.name-cell{
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .data-table tbody td.name-cell::before{
+        display: none;
+    }
+
+    .data-table tbody td.row-actions{
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .data-table tbody td.row-actions::before{
+        display: none;
+    }
+
+}
+
+
+/* ---------- Small Mobile ---------- */
+@media screen and (max-width:480px){
+
+    .navbar{
+        padding:15px 12px;
+    }
+
+    .navbar .brand{
+        font-size:20px;
+    }
+
+    .navbar .nav-links a{
+        font-size:13px;
+        padding:10px;
+    }
+
+    .hero h1{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .card-header h1{
+        font-size:20px;
+    }
+
+    .card-header p{
+        font-size:12px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select{
+        font-size:14px;
+    }
+
+    .mini-card{
+        padding:18px;
+    }
+
 }
