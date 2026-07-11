@@ -29,8 +29,7 @@ public class DBUtil {
 	        String password = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz";
 //	        String url = "jdbc:mysql://" + host + ":" + port + "/" + database
 //	                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-	        String url = "jdbc:mysql://mysql.railway.internal:3306/railway"
-	                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+	        String url = "mysql://root:ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz@ballast.proxy.rlwy.net:24024/railway";
 	        System.out.println("===== NEW DBUTIL =====");
 	        System.out.println(url);
 	        System.out.println(user);
