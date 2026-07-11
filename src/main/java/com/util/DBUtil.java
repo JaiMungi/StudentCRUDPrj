@@ -23,12 +23,14 @@ public class DBUtil {
 	        String host = System.getenv("MYSQLHOST");
 	        String port = System.getenv("MYSQLPORT");
 	        String database = System.getenv("MYSQLDATABASE");
-	        String user = System.getenv("MYSQLUSER");
-	        String password = System.getenv("MYSQLPASSWORD");
-
-	        String url = "jdbc:mysql://" + host + ":" + port + "/" + database
+	       // String user = System.getenv("MYSQLUSER");
+	        String user = "root";
+	        //String password = System.getenv("MYSQLPASSWORD");
+	        String password = "ZUIRNkkqxvOpsrENDQHsMOLaMpgiOFfz";
+//	        String url = "jdbc:mysql://" + host + ":" + port + "/" + database
+//	                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+	        String url = "jdbc:mysql://mysql.railway.internal:3306/railway"
 	                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-	        
 	        System.out.println("===== NEW DBUTIL =====");
 	        System.out.println(url);
 	        System.out.println(user);
